@@ -29,7 +29,7 @@ const Feed = () => {
             try{
                 const email = localStorage.getItem('loggedInUser');
                 const user = await axios.get("http://localhost:8080/users/getbyemail/" + email);
-                
+
                 const friendsResponse = await axios.get('http://localhost:8080/friend-requests/getfriendsbyid/' + user.data.id + '/true');
                 if(!friendsResponse){
                     throw new Error("Failed to grab userId");
@@ -37,9 +37,9 @@ const Feed = () => {
                 const friendsData = friendsResponse['data'];
                 console.log(friendsData);
                 console.log(friendsData.length);
-                
+
                 let allPosts = [];
-                
+
                 for(let i = 0; i < friendsData.length; i++){
                     if(friendsData[i].sender.id != user.data.id){
                         const postsResponse = await axios.get('http://localhost:8080/posts/fetch/' + friendsData[i].sender.id);
@@ -108,7 +108,7 @@ const Feed = () => {
                 {/* <button id='nav-button' onClick={()=> navigate('/friends')}>Friends</button> */}
                 <Logout className='logout'/>
             </nav>
-            
+
             <p>This is the feed page (in development)</p>
 
             <div id={isExpanded ? 'visible' : 'hidden'} className='post'>
@@ -126,7 +126,7 @@ const Feed = () => {
                         <Post post={post}/>
                     </div>
                 ))}
-                
+
             </div>
 
         </div>
