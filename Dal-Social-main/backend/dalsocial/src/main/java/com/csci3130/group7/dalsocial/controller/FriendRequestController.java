@@ -3,7 +3,7 @@ package com.csci3130.group7.dalsocial.controller;
 
 import com.csci3130.group7.dalsocial.model.Friend;
 import com.csci3130.group7.dalsocial.model.User;
-import com.csci3130.group7.dalsocial.service.FriendRequestService;
+import com.csci3130.group7.dalsocial.service.FriendRequestServ;
 import com.csci3130.group7.dalsocial.service.Implementation.FriendRequestServiceImpl;
 import com.csci3130.group7.dalsocial.service.Implementation.UserServiceImpl;
 import com.csci3130.group7.dalsocial.service.UserService;
@@ -18,7 +18,7 @@ import java.util.List;
 public class FriendRequestController {
 
     @Autowired
-    private FriendRequestService friendRequestService;
+    private FriendRequestServ friendRequestService;
 
     @Autowired
     private UserService userService;

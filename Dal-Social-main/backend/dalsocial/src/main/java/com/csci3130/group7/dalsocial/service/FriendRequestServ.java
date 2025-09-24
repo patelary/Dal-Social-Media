@@ -5,7 +5,7 @@ import com.csci3130.group7.dalsocial.model.User;
 
 import java.util.List;
 
-public interface FriendRequestService {
+public interface FriendRequestServ {
 
     public List<Friend> fetchAllFriends();
 
